@@ -1,0 +1,29 @@
+{
+  "name": "monorepo-web-app-template",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "format": "prettier --write \"**/*.{ts,tsx,json}\"",
+    "test": "turbo test",
+    "test:watch": "turbo test:watch",
+    "clean": "turbo run clean; pnpm clean:turbo; pnpm clean:node_modules",
+    "clean:dist": "turbo run clean:dist",
+    "clean:turbo": "pnpm -r exec rimraf .turbo && pnpm rimraf ./.turbo",
+    "clean:node_modules": "pnpm -r exec rimraf node_modules; pnpm rimraf ./node_modules"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "eslint": "8.56.0",
+    "prettier": "3.1.1",
+    "rimraf": "5.0.5",
+    "turbo": "1.11.3"
+  },
+  "packageManager": "pnpm@8.13.1",
+  "volta": {
+    "node": "20.10.0",
+    "pnpm": "8.13.1"
+  }
+}
